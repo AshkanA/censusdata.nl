@@ -1,0 +1,18 @@
+<html>
+<head>
+<link href='http://cdn.jsdelivr.net/yasgui/2.1.4/yasgui.min.css' rel='stylesheet' type='text/css'/>
+
+<style type="text/css">
+.endpointText {display:none !important;}
+</style>
+</head>
+<body>
+<div id="yasgui"></div>
+
+<script src='http://cdn.jsdelivr.net/yasgui/2.1.4/yasgui.min.js'></script>
+
+<script type="text/javascript">
+YASGUI.YASQE.defaults.sparql.endpoint = 'http://lod.cedar-project.nl/cedar-mini/sparql'
+var yasgui = YASGUI(document.getElementById("yasgui"));
+</script>
+</body>

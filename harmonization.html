@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>The CEDAR MiniProjects Harmonized Data Portal</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom styles for this template -->
+    <link href="css/carousel.css" rel="stylesheet">
+  </head>
+<!-- NAVBAR
+================================================== -->
+  <body>
+       <div id="nav" class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+              <a class="navbar-brand" href="http://www.cedar-project.nl">CEDAR</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="active"><a href="harmonization.html">Harmonized Data</a></li>
+                <li><a href="publications.html">Publications</a></li>  
+                                <li class="RDF">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">RDF<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="https://github.com/CEDAR-project">GitHub</a></li>
+                    <li><a href="http://lod.cedar-project.nl/cedar-mini/sparql">SPARQL Endpoint</a></li>
+                    <li class="divider"></li>
+                     <li><a href="https://gist.github.com/AshkanA">Query Examples</a></li>
+                  </ul>
+                  <li><a href="GIS.html">GIS</a></li> 
+                  <li><a href="contact.html">Contact us</a></li> 
+                    </ul>
+                </div><!--/.nav-collapse -->
+            </div>
+  </div>
+  <p><br>
+  <br>
+  </p>
+  <p>&nbsp;</p>
+  <p><br>
+    <br>
+    <center><img class="img-circle" src="image/download.gif" alt="Generic placeholder image" width="140" height="140">
+  </p>
+  <h2>Download Harmonized Data<sup>1.</sup></h2>
+<p>&nbsp;</p>
+<p><strong>Housing Variable Files</strong></p>
+<p>Slices (variable combinations of the census)<br>
+</p>
+<p><a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Bewoonde+Huizen+binnen+de+Kom%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-BewoondeHuizen%3E+.+++%0D%0A++++++++%3Fobs+cedar%3AKom+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar-Kom%23BinnenKom%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="BewoondeHuizen_BinnenKom.csv">Bewoonde Huizen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeHuizen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a> <br>
+  <a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Bewoonde+Huizen+Buiten+de+Kom%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-BewoondeHuizen%3E+.+++%0D%0A++++++++%3Fobs+cedar%3AKom+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar-Kom%23BuitenKom%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="BewoondeHuizen_BuitenKom.csv">Bewoonde Huizen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeHuizen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a> <br>
+  <a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Bewoonde+Huizen+Totaal%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-BewoondeHuizen%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="BewoondeHuizen_Totaal.csv">Bewoonde Huizen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeHuizen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a> </p>
+<p><a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Onbewoonde+Huizen+binnen+de+Kom%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-OnbewoondeHuizen%3E+.+++%0D%0A++++++++%3Fobs+cedar%3AKom+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar-Kom%23BinnenKom%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="OnbewoondeHuizen_BinnenKom.csv">Onbewoonde Huizen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_OnbewoondeHuizen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Onbewoonde+Huizen+buiten+de+Kom%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-OnbewoondeHuizen%3E+.+++%0D%0A++++++++%3Fobs+cedar%3AKom+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar-Kom%23BuitenKom%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="OnbewoondeHuizen_BuitenKom.csv">Onbewoonde Huizen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_OnbewoondeHuizen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=#++summary%3A+Onbewoonde+Huizen+Totaal
+#++tags%3A+
+#++++-+Harmonized+Tables+1859-1920
+
+PREFIX+qb%3A+<http%3A//purl.org/linked-data/cube#>
+PREFIX+cedar%3A+<http%3A//lod.cedar-project.nl/vocab/cedar#>
+PREFIX+sdmx-dimension%3A+<http%3A//purl.org/linked-data/sdmx/2009/dimension#>
+PREFIX+sdmx-code%3A+<http%3A//purl.org/linked-data/sdmx/2009/code#>
++
+SELECT+?municipality+?year+(SUM(?pop)+AS+?tot)
+FROM+<urn%3Agraph%3Acedar-mini%3Arelease>
+WHERE+{+?obs+a+qb%3AObservation+.+
+++++++++?obs+cedar%3Apopulation+?pop+.+
+++++++++?obs+sdmx-dimension%3ArefArea+?municipality+.
+++++++++?obs+cedar%3AhouseType+<http%3A//lod.cedar-project.nl/vocab/cedar#house-OnbewoondeHuizen>+.+++++++++++
+++++++++?slice+a+qb%3ASlice.
+++++++++?slice+qb%3Aobservation+?obs.
+++++++++?slice+sdmx-dimension%3ArefPeriod+?year+.
+++++++++FILTER+(NOT+EXISTS+{?obs+cedar%3AisTotal+?total+})+.
+++++++++FILTER+(?year+IN+(1859,+1869,+1879,+1889,+1899,+1909,+1920))+.
+}+GROUP+BY+?municipality+?year+ORDER+BY+?municipality&should-sponge=&format=text/csv&timeout=0&debug=on" download="OnbewoondeHuizen_Totaal.csv">Onbewoonde Huizen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_OnbewoondeHuizen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Bewoonde+Huizen+in+Aanbouw+binnen+de+Kom%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-HuizenAanbouw%3E+.+++%0D%0A++++++++%3Fobs+cedar%3AKom+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar-Kom%23BinnenKom%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="HuizenAanbouw_BinnenKom.csv">Huizen in Aanbouw Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_HuizeninAanbouw_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Bewoonde+Huizen+in+Aanbouw+buiten+de+Kom%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-HuizenAanbouw%3E+.+++%0D%0A++++++++%3Fobs+cedar%3AKom+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar-Kom%23BuitenKom%3E+.++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="HuizenAanbouw_BuitenKom.csv" >Huizen in Aanbouw Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_HuizeninAanbouw_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="http://lod.cedar-project.nl/cedar-mini/sparql?default-graph-uri=&query=%23%2B+summary%3A+Bewoonde+Huizen+in+Aanbouw+Totaal%0D%0A%23%2B+tags%3A+%0D%0A%23%2B+++-+Harmonized+Tables+1859-1920%0D%0A%0D%0APREFIX+qb%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fcube%23%3E%0D%0APREFIX+cedar%3A+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23%3E%0D%0APREFIX+sdmx-dimension%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fdimension%23%3E%0D%0APREFIX+sdmx-code%3A+%3Chttp%3A%2F%2Fpurl.org%2Flinked-data%2Fsdmx%2F2009%2Fcode%23%3E%0D%0A+%0D%0ASELECT+%3Fmunicipality+%3Fyear+%28SUM%28%3Fpop%29+AS+%3Ftot%29%0D%0AFROM+%3Curn%3Agraph%3Acedar-mini%3Arelease%3E%0D%0AWHERE+%7B+%3Fobs+a+qb%3AObservation+.+%0D%0A++++++++%3Fobs+cedar%3Apopulation+%3Fpop+.+%0D%0A++++++++%3Fobs+sdmx-dimension%3ArefArea+%3Fmunicipality+.%0D%0A++++++++%3Fobs+cedar%3AhouseType+%3Chttp%3A%2F%2Flod.cedar-project.nl%2Fvocab%2Fcedar%23house-HuizenAanbouw%3E+.+++++++++++%0D%0A++++++++%3Fslice+a+qb%3ASlice.%0D%0A++++++++%3Fslice+qb%3Aobservation+%3Fobs.%0D%0A++++++++%3Fslice+sdmx-dimension%3ArefPeriod+%3Fyear+.%0D%0A++++++++FILTER+%28NOT+EXISTS+%7B%3Fobs+cedar%3AisTotal+%3Ftotal+%7D%29+.%0D%0A++++++++FILTER+%28%3Fyear+IN+%281859%2C+1869%2C+1879%2C+1889%2C+1899%2C+1909%2C+1920%29%29+.%0D%0A%7D+GROUP+BY+%3Fmunicipality+%3Fyear+ORDER+BY+%3Fmunicipality&should-sponge=&format=text%2Fcsv&timeout=0&debug=on" download="HuizenAanbouw_Totaal.csv">Huizen in Aanbouw Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_HuizeninAanbouw_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeSchepen_AltijdAanwezig_BinnenKom.xlsx?raw=true">Bewoonde Schepen Altijd Aanwezig in de Gemeente Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeSchepen_AltijdAanwezig_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeSchepen_AltijdAanwezig_BinnenKom.xlsx?raw=true">Bewoonde Schepen Altijd Aanwezig in de Gemeente Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeSchepen_AltijdAanwezig_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeSchepen_AltijdAanwezig_Totaal.xlsx?raw=true">Bewoonde Schepen Altijd Aanwezig in de Gemeente Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeSchepen_AltijdAanwezig_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeSchepen_TijdelijkAanwezig_BinnenKom.xlsx?raw=true">Bewoonde Schepen Tijdelijk Aanwezig Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeSchepen_TijdelijkAanwezig_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeSchepen_TijdelijkAanwezig_BuitenKom.xlsx?raw=true">Bewoonde Schepen Tijdelijk Aanwezig Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeSchepen_TijdelijkAanwezig_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeSchepen_TijdelijkAanwezig_Totaal.xlsx?raw=true">Bewoonde Schepen Tijdelijk Aanwezig Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeSchepen_TijdelijkAanwezig_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeWagens_AltijdAanwezig_BinnenKom.xlsx?raw=true">Bewoonde Wagens Altijd Aanwezig in de Gemeente Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeWagens_AltijdAanwezig_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeWagens_AltijdAanwezig_BuitenKom.xlsx?raw=true">Bewoonde Wagens Altijd Aanwezig in de Gemeente Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeWagens_AltijdAanwezig_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeWagens_AltijdAanwezig_Totaal.xlsx?raw=true">Bewoonde Wagens Altijd Aanwezig in de Gemeente Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeWagens_AltijdAanwezig_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeWagens_TijdelijkAanwezig_BinnenKom.xlsx?raw=true">Bewoonde Wagens Tijdelijk Aanwezig Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeWagens_TijdelijkAanwezig_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeWagens_TijdelijkAanwezig_BuitenKom.xlsx?raw=true">Bewoonde Wagens Tijdelijk Aanwezig Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeWagens_TijdelijkAanwezig_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/BewoondeWagens_TijdelijkAanwezig_Totaal.xlsx?raw=true">Bewoonde Wagens Tijdelijk Aanwezig Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_BewoondeWagens_TijdelijkAanwezig_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p>&nbsp;</p>
+<p>Variable Dump (all slices in one big table)</p>
+<p>Flat List in <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/HousingVariablesDump.xlsx?raw=true">Excel</a>, <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/HousingVariablesDump.csv?raw=true">CSV</a> (Query Output: use this as the input for your workflow and tools)</p>
+
+<p>Structured <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/DemograpicTable_StructuredTable.xlsx?raw=true">Excel</a> Table (Structured Harmonized view on the data across the years in Excel)</p>
+
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/demograpicTable_SPSS.sav?raw=true">SPSS</a> File&nbsp;<span style="line-height: 20.7999992370605px;">(ready to use SPSS File with variables alreay defined)</span></p>
+
+<p>&nbsp;</p>
+<p><strong>Demographic Variable Files</strong></p>
+<p>Slices (variable combinations of the census)</p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Mannen_BinnenKom.xlsx?raw=true">Juridisch Aanwezige Mannen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Mannen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a> <br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Mannen_BuitenKom.xlsx?raw=true">Juridisch Aanwezige Mannen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Mannen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Mannen_Totaal.xlsx?raw=true">Juridisch Aanwezige Mannen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Mannen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Vrouwen_BinnenKom.xlsx?raw=true">Juridisch Aanwezige Vrouwen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Vrouwen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Vrouwen_BuitenKom.xlsx?raw=true">Juridisch Aanwezige Vrouwen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Vrouwen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Vrouwen_Totaal.xlsx?raw=true">Juridisch Aanwezige Vrouwen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Vrouwen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/JuridischAanwezige_Bevolking.xlsx?raw=true">Juridisch Aanwezige Bevolking</a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_JuridischAanwezige_Bevolking.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+  </a></p>
+<p>&nbsp;</p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Mannen_BinnenKom.xlsx?raw=true">Feitelijk Aanwezige Mannen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Mannen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Mannen_BuitenKom.xlsx?raw=true">Feitelijk Aanwezige Mannen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Mannen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Mannen_Totaal.xlsx?raw=true">Feitelijk Aanwezige Mannen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Mannen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Vrouwen_BinnenKom.xlsx?raw=true">Feitelijk Aanwezige Vrouwen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Vrouwen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Vrouwen_BuitenKom.xlsx?raw=true">Feitelijk Aanwezige Vrouwen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Vrouwen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Vrouwen_Totaal.xlsx?raw=true">Feitelijk Aanwezige Vrouwen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Vrouwen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+  </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/FeitelijkAanwezige_Bevolking.xlsx?raw=true">Feitelijk Aanwezige Bevolking</a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_FeitelijkAanwezige_Bevolking.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+  </a></p>
+<p><br>
+</p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Mannen_BinnenKom.xlsx?raw=true">Tijdelijk Aanwezige Mannen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Mannen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Mannen_BuitenKom.xlsx?raw=true">Tijdelijk Aanwezige Mannen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Mannen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Mannen_Totaal.xlsx?raw=true">Tijdelijk Aanwezige Mannen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Mannen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Vrouwen_BinnenKom.xlsx?raw=true">Tijdelijk Aanwezige Vrouwen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Vrouwen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Vrouwen_BuitenKom.xlsx?raw=true">Tijdelijk Aanwezige Vrouwen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Vrouwen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Vrouwen_Totaal.xlsx?raw=true">Tijdelijk Aanwezige Vrouwen Totaal </a> <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Vrouwen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAanwezige_Bevolking.xlsx?raw=true">Tijdelijk Aanwezige Bevolking</a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAanwezige_Bevolking.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+  </a></p>
+<p>&nbsp;</p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Mannen_BinnenKom.xlsx?raw=true">Tijdelijk Afwezige Mannen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Mannen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Mannen_BuitenKom.xlsx?raw=true">Tijdelijk Afwezige Mannen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Mannen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Mannen_Totaal.xlsx?raw=true">Tijdelijk Afwezige Mannen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Mannen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a></p>
+<p>  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Vrouwen_BinnenKom.xlsx?raw=true">Tijdelijk Afwezige Vrouwen Binnen de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Vrouwen_BinnenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Vrouwen_BuitenKom.xlsx?raw=true">Tijdelijk Afwezige Vrouwen Buiten de Kom </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Vrouwen_BuitenKom.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+        </a><br>
+  <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Vrouwen_Totaal.xlsx?raw=true">Tijdelijk Afwezige Vrouwen Totaal </a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Vrouwen_Totaal.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+  </a></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/TijdelijkAfwezige_Bevolking.xlsx?raw=true">Tijdelijk Afwezige Bevolking</a><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Queries/H_TijdelijkAfwezige_Bevolking.rq">
+          <span class="glyphicon glyphicon-edit"></span>
+  </a><br>
+</p>
+<p>&nbsp;</p>
+<p>Variable Dump (all slices in one big table)</p>
+<p>Flat List in <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/DemographicVariablesDump.xlsx?raw=true">Excel</a>, <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/DemographicVariablesDump.csv?raw=true">CSV</a> (Query Output: use this as the input for your workflow and tools)</p>
+<p>Structured Table (Structured Harmonized view on the data across the years in Excel)</p>
+<p>SPSS File&nbsp;<span style="line-height: 20.7999992370605px;">(ready to use SPSS File with variables alreay defined)</span></p>
+<p>&nbsp;</p>
+<p><strong>Datadump of all harmonized variables for the 1859-1920 dataset</strong></p>
+<p>Flat List in <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/DataDump_1859-1920.xlsx?raw=true">Excel</a>, <a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/DataDump_1859-1920.csv?raw=true">CSV</a> (Query Output: use this as the input for your workflow and tools)</p>
+<p>&nbsp;</p>
+<p><strong>Housing Classification</strong></p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/HousingCodes.xlsx?raw=true">Classification Codes</a><br>
+  </p>
+<p><a href="https://github.com/AshkanA/HarmonizedCensusData/blob/master/Housing%20Classification%20Mappings.xlsx?raw=true">Mappings </a></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+<p><sup>1. <a href="publications.html">Ashkpour et. al &nbsp;Harmonization&nbsp;2016</a></sup></p>
+<p>&nbsp;</p>
+<p><a href="https://datasets.socialhistory.org/dataset.xhtml?persistentId=hdl:10622/JCJDAY" target="_blank"><img src="https://datasets.socialhistory.org/resources/images/dataverseproject_logo.jpg" alt="The Dataverse Project"/></a><a href="https://easy.dans.knaw.nl/ui/datasets/id/easy-dataset:65218"><img src="https://easy.dans.knaw.nl/ui/images/lay-out/logo_easy.png" alt="EASY"/></a><a href="https://github.com/AshkanA/HarmonizedCensusData" target="_blank"><img src="http://www.dataversity.net/wp-content/uploads/2014/09/GitHub_LogoMark304x200.png" alt="GitHub" width="149" height="88"/></a><br>
+  <br>
+</p>
+<center>
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><script type="text/javascript" src="./js/bootstrap.min.js"></script>
+  <script src="email/validation.js" type="text/javascript"></script>
+  <script type="text/javascript" src="./js/jqBootstrapValidation.js"></script><script type="text/javascript" src="./js/contact_me.js"></script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62081365-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Creative Commons-Licentie" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" /></body>
+</html>
